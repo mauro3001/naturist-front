@@ -1,0 +1,44 @@
+<div class="wrapper">
+  <mat-card class="content">
+    <mat-card-content class="content_styles">
+      <mat-card class="item fade-in" *ngFor="let medicine of products">
+        <img
+          mat-card-image
+          [src]="medicine.imageUrl"
+          routerLink="."
+          [queryParams]="{ medicine: medicine.id }"
+          (click)="openDialog(medicine)" />
+        <mat-card-content>
+          <p
+            class="content_title hover"
+            routerLink="."
+            [queryParams]="{ medicine: medicine.id }"
+            (click)="openDialog(medicine)">
+            {{ medicine.name }}
+          </p>
+          <p class="content_desc">COP {{ medicine.price | currency }}</p>
+
+          <div class="content_button">
+            <button mat-raised-button class="buttonColor">
+              <a
+                class="content_link"
+                target="_blank"
+                href="http://wa.me/573158348468"
+                >Comprar</a
+              >
+            </button>
+            <button
+              mat-icon-button
+              class="colorPrimary"
+              aria-label="Visualizar producto"
+              (click)="openDialog(medicine)"
+              routerLink="."
+              [queryParams]="{ medicine: medicine.id }">
+              <mat-icon>visibility</mat-icon>
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
+</div>
