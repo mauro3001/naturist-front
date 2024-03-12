@@ -1,0 +1,16 @@
+<mat-toolbar class="toolbar">
+  <span class="name">{{ title }}</span>
+
+  <div class="title">
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon class="title_icon">medication_liquid</mat-icon>
+      <p class="title_text">Categorias</p>
+    </button>
+    <mat-menu #menu>
+      <button mat-menu-item *ngFor="let option of options">
+        <mat-icon>{{ option.icon }}</mat-icon>
+        <span>{{ option.icon }}</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

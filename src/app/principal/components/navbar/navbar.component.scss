@@ -1,0 +1,49 @@
+.toolbar {
+  background-color: #4f8a10;
+  color: white;
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 10px;
+  margin: 10px 32px 20px 32px;
+  width: auto !important;
+  min-width: 340px;
+
+  .name {
+    font-size: 3vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    > button {
+      width: 30vh;
+      height: 8vh;
+    }
+    &_icon {
+      font-size: 8vh !important;
+      height: 8vh !important;
+      width: auto !important;
+    }
+    &_text {
+      font-size: 3vh;
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .title_text {
+    display: none;
+  }
+
+  .title {
+    > button {
+        width: 11vh !important;
+        height: 8vh;
+    }
+  }
+}
